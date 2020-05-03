@@ -1,0 +1,5 @@
+
+@import "./style/stylesheet.wxss";
+image,navigator,swiper,swiper-item,input{
+  box-sizing: border-box;
+}

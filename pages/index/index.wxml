@@ -1,0 +1,33 @@
+<view class="main">
+  <MyTitle></MyTitle>
+  <view class="nav_main">
+    <scroll-view scroll-x>
+      <view bindtap="active" id="index" data-index="{{index}}" class="navitem {{index=== activeIndex ? 'active' : ''}}" wx:for="{{navList}}" wx:key="index">
+      {{item.text}}
+      </view>
+    </scroll-view>
+  </view>
+  <view class="slider">
+    <swiper autoplay circular indicator-dots> 
+      <swiper-item wx:for="{{sliderImgList}}" wx:key="{{index}}"  >
+        <navigator>
+          <image src="{{item.imgSrc}}" mode="widthFix"></image>
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="play_video">
+    <view class="video_block" wx:for="{{videoList}}" wx:key="{{item.id}}">
+      <navigator url="../detail/detail?id={{item.id}}">
+        <view class="video">
+          <image src="{{item.imgSrc}}" mode="widthFix"> </image>
+          <view class="play_count icon-play2">{{item.playCount}}</view>
+          <view class="play_comment icon-bubble2">{{item.commentCount}}</view>
+        </view>
+        <view class="video_desc">
+          {{item.desc}}
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

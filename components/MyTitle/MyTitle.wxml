@@ -1,0 +1,20 @@
+<view class="title">
+  <view class="logo">
+    <navigator url="http://www.baidu.com">
+      <image src="../../icon/logo.png"> </image>
+    </navigator>
+  </view>
+  <view class="search">
+    <form>
+      <input><image src="../../icon/search.png"></image></input>
+    </form>
+  </view>
+  <view class="user">
+    <navigator>
+      <image src='../../icon/user.png'></image>
+    </navigator>
+  </view>
+  <view class="download">
+     下载app
+  </view>
+</view>

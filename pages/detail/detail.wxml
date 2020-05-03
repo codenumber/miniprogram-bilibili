@@ -1,0 +1,18 @@
+<MyTitle></MyTitle>
+<view class="main">
+  <view>
+    <video class="video" src="{{videoInfo.videoSrc}}" control></video>
+    <view class="video_desc">
+      <view class="title">{{videoInfo.videoTitle}}</view>
+      <text class="play icon-play">{{videoInfo.playCount}}</text> 
+      
+      <text class="play">{{videoInfo.commentCount}}</text> 
+      
+      <text class="play">{{videoInfo.date}}</text>
+      <text class='play'>{{videoInfo.author}}</text> 
+    </view>
+  </view>
+
+  
+
+</view>
