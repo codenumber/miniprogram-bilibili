@@ -6,13 +6,43 @@
       <view class="title">{{videoInfo.videoTitle}}</view>
       <text class="play icon-play">{{videoInfo.playCount}}</text> 
       
-      <text class="play">{{videoInfo.commentCount}}</text> 
+      <text class="play icon-file-text">{{videoInfo.commentCount}}</text> 
       
       <text class="play">{{videoInfo.date}}</text>
       <text class='play'>{{videoInfo.author}}</text> 
     </view>
   </view>
+  <view class="videolist_text">推荐视频</view>
+  <view class="other_videolist">
+    <view class="other_video" wx:for="{{otherVideoList}}" :key="{{index}}">
+      <navigator>
+      <view class="othervideo_img">
+        <image src="{{item.imgSrc}}" mode="widthFix"></image>  
+      </view>
+      <view class="othervideo_desc">
+        <view>{{item.title}}</view>
+        <view class="othervideo_bottomdesc">
+          <text >时长{{item.duration}}</text>
+          <text class="icon-play">{{item.playMsg}}k</text>
+          <text class="icon-file-text">{{item.commentCount}}</text>
+        </view>
+      </view>
+      </navigator>
+    </view>
+  </view>
+    <view class="videolist_text">评论列表</view>
+  <view class="comment_list">
+    <view class="comment" wx:for="{{commentList}}">
+      <view class="user_img">
+        <image src="{{item.userIconSrc}}" mode="widthFix"></image>
+      </view>
+      <view class="comment_desc">
+        <view>{{item.username}}</view>
+        <view>{{item.dommentDate}}</view>
+        <view>{{item.commentInfo}}</view>
+      </view>
 
-  
+    </view>
+  </view>
 
 </view>

@@ -5,13 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    videoList: []
+    videoInfo: {},
+    otherVideoList: [],
+    commentList: []
   },
   getVideoInfo(options) {
     wx.request({
       url: 'http://mock-api.com/mnEe4VnJ.mock/videoDetail?id=' + options.id,
       success: (res) => {
-        console.log(res)
         if (res.data.code !== 0) return 
         this.setData({
           videoInfo: res.data.data.videoInfo
@@ -19,11 +20,36 @@ Page({
       }
      })
   },
+  getOtherVideoList(options) {
+    wx.request({
+      url: 'http://mock-api.com/mnEe4VnJ.mock/otherList?id=' + options.id,
+      success: (res) => {
+        if (res.data.code !== 0) return
+        this.setData({
+          otherVideoList: res.data.data.otherList
+        })
+      }
+    })
+  },
+  getCommentList(options) {
+    wx.request({
+      url: 'http://mock-api.com/mnEe4VnJ.mock/commentList?id=' + options.id,
+      success: (res) => {
+        console.log(res)
+        if (res.data.code !== 0) return
+        this.setData({
+          commentList: res.data.data.commentData.commentList
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.getVideoInfo(options)
+    this.getOtherVideoList(options)
+    this.getCommentList(options)
   },
 
   /**
